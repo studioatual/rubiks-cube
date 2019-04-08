@@ -1,0 +1,44 @@
+
+front = red
+back => orange
+right => yellow
+left => white
+top => blue
+bottom => green
+
+fixed => 4  => left	=> blue
+fixed => 10 => top	=> yellow
+fixed => 13 => center 	=> black
+fixed => 14 => front  	=> red
+fixed => 22 => right  	=> green
+fixed => 16 => bottom 	=> white
+
+FRONT 
+[ 2, 11, 20 ]
+[ 5, 14, 23 ]
+[ 8, 17, 26 ]
+
+BACK
+[ 18,  9, 0 ]
+[ 21, 12, 3 ]
+[ 24, 15, 6 ]
+
+RIGHT
+[ 20, 19, 18 ]
+[ 23, 22, 21 ]
+[ 26, 25, 24 ]
+
+LEFT
+[ 0, 1, 2 ]
+[ 3, 4, 5 ]
+[ 6, 7, 8 ]
+
+TOP
+[ 0,  9, 18 ]
+[ 1, 10, 19 ]
+[ 2, 11, 20 ]
+
+BOTTOM
+[ 8, 17, 26 ]
+[ 7, 16, 25 ]
+[ 6, 15, 24 ]
