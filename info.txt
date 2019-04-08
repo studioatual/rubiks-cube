@@ -1,13 +1,13 @@
 
-front = red
+front => red
 back => orange
-right => yellow
-left => white
-top => blue
-bottom => green
+right => green
+left => blue
+top => yellow
+bottom => white
 
-fixed => 4  => left	=> blue
-fixed => 10 => top	=> yellow
+fixed => 4  => left	    => blue
+fixed => 10 => top	    => yellow
 fixed => 13 => center 	=> black
 fixed => 14 => front  	=> red
 fixed => 22 => right  	=> green
