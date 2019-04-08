@@ -80,6 +80,7 @@ function setup() {
   setAttributes("antialias", true);
   index = 0;
   cubes = [];
+
   for (let i = 0; i < dim; i++) {
     for (let j = 0; j < dim; j++) {
       for (let k = 0; k < dim; k++) {
@@ -88,7 +89,7 @@ function setup() {
         let pz = k * size - size;
         /*
         ** testing one cube black
-
+      
           let cube;
           if (index == 8) {
             cube = new Cube(px, py, pz, size, [33, 33, 33, 33, 33, 33], index);
