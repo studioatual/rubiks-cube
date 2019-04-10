@@ -5,7 +5,8 @@ let cubes = [];
 /* AUTO ANIMATION - RANDOM */
 const moves = ['f', 'F', 'b', 'B', 'r', 'R', 'l', 'L', 'u', 'U', 'd', 'D'];
 let listMoves = [];
-let autoanimation = false;
+let autoanimation = true;
+let backwardMoves = false;
 
 let colors = [
   [255, 0, 0],
@@ -106,7 +107,9 @@ function setup() {
 }
 
 function keyPressed() {
-  play(key);
+  if (!autoanimation) {
+    play(key);
+  }
 }
 
 function play(key) {
@@ -191,12 +194,24 @@ function play(key) {
   }
 }
 
+function flipMove(mKey) {
+  console.log(mKey)
+  if (mKey.toLowerCase() == mKey) {
+    return mKey.toUpperCase()
+  }
+  return mKey.toLowerCase()
+}
+
 function draw() {
   background(64);
   orbitControl();
 
   if (animating) {
-    angle = angle += 0.04;
+    if (autoanimation) {
+      angle = angle += 0.2;
+    } else {
+      angle = angle += 0.05;
+    }
     if (angle >= HALF_PI) {
       angle = HALF_PI;
       animating = false;
@@ -205,10 +220,18 @@ function draw() {
   } else {
     /* AUTO ANIMATION - RANDOM */
     if (autoanimation) {
-      if (listMoves.length < 30) {
+      if (listMoves.length < 30 && !backwardMoves) {
         let mKey = moves[Math.floor(Math.random() * moves.length)];
         play(mKey);
         listMoves.push(mKey);
+      } else {
+        backwardMoves = true
+        if (listMoves.length > 0) {
+          play(flipMove(listMoves.pop()))
+        } else {
+          backwardMoves = false;
+          autoanimation = false;
+        }
       }
     }
   }
